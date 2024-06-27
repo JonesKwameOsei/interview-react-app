@@ -26,11 +26,11 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
       linuxFxVersion: 'NODE|16' // Node.js version
       appSettings: [
         {
-          name: 'WEBSITE_NODE_DEFAULT_VERSION'
-          value: '~16' // the Node.js version above
+          name: 'WEBSITE_NODE_ENVIRONMENT'
+          value: 'Development' 
         }
         {
-          name: 'APPSETTING_UseOnlyInMemoryDatabase'
+          name: 'UseOnlyInMemoryDatabase'
           value: 'true' 
         }
       ]
