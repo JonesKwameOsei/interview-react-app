@@ -1,0 +1,13 @@
+version: 2
+updates: 
+  # GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  
+  # npm ecosystem for React dependencies
+  - package-ecosystem: "npm"
+    directory: "/my-app" # Adjust this to the path of your React app directory
+    schedule:
+      interval: "daily"
