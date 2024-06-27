@@ -4,10 +4,10 @@ on: [push, workflow_dispatch]
 
 # Environment variables
 env:
-  RESOURCE-GROUP: reactwebapp_rg
-  LOCATION: uksouth
+  RESOURCE-GROUP: <your resource group>
+  LOCATION: <your deploymwnt loco>
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: 96047339-523f-41da-a50a-c1f7e9a635ec
+  SUBSCRIPTION-ID: <your azure subs.id>
   WEBAPP-NAME: interview-reactapp-webapp
 
 jobs:
