@@ -37,5 +37,3 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
     }
   }
 }
-
-output appId string = webApp.id
