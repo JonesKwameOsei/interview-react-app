@@ -16,30 +16,26 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {
   kind: 'app'
 }
 
-resource webApp 'Microsoft.Web/sites@2022-03-01' = {
+resource appService 'Microsoft.Web/sites@2022-03-01' = {
   name: webAppName
+  kind: 'app'
   location: location
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
-      linuxFxVersion: 'NODE|16' // Specify Node.js version here
+      linuxFxVersion: 'NODE|16' // Node.js version
       appSettings: [
         {
           name: 'WEBSITE_NODE_DEFAULT_VERSION'
-          value: '~16' // Ensure this matches the Node.js version above
-        },
+          value: '~16' // the Node.js version above
+        }
         {
-          name: 'APPSETTING_ASPNETCORE_ENVIRONMENT' // Remove if not needed
-          value: 'Development' // Remove if not needed
-        },
-        {
-          name: 'APPSETTING_UseOnlyInMemoryDatabase' // Remove if not needed
-          value: 'true' // Remove if not needed
+          name: 'APPSETTING_UseOnlyInMemoryDatabase'
+          value: 'true' 
         }
       ]
     }
   }
-  kind: 'app'
 }
 
 output appId string = webApp.id
